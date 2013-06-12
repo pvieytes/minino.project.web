@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Module minino_api</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module minino_api</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+   Minino api.
+<p>Copyright © (C) 2013, Openshine s.l.</p>
+
+<p><b>Authors:</b> Pablo Vieytes (<a href="mailto:pvieytes@openshine.com"><tt>pvieytes@openshine.com</tt></a>).</p>
+
+<h2><a name="description">Description</a></h2>
+   Minino api.
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#build_url-3">build_url/3</a></td><td>build url.</td></tr>
+<tr><td valign="top"><a href="#get_conf-0">get_conf/0</a></td><td>get conf.</td></tr>
+<tr><td valign="top"><a href="#get_cookie-2">get_cookie/2</a></td><td>get cookie.</td></tr>
+<tr><td valign="top"><a href="#get_cookies-1">get_cookies/1</a></td><td>get cookies.</td></tr>
+<tr><td valign="top"><a href="#get_file-2">get_file/2</a></td><td>get file.</td></tr>
+<tr><td valign="top"><a href="#get_method-1">get_method/1</a></td><td>get method.</td></tr>
+<tr><td valign="top"><a href="#get_session_cookie_domain-0">get_session_cookie_domain/0</a></td><td>get session cookie domain.</td></tr>
+<tr><td valign="top"><a href="#get_session_cookie_httponly-0">get_session_cookie_httponly/0</a></td><td>get session cookie httponly.</td></tr>
+<tr><td valign="top"><a href="#get_session_cookie_path-0">get_session_cookie_path/0</a></td><td>get session cookie path.</td></tr>
+<tr><td valign="top"><a href="#get_session_cookie_secure-0">get_session_cookie_secure/0</a></td><td>get session cookie secure.</td></tr>
+<tr><td valign="top"><a href="#get_session_dict-1">get_session_dict/1</a></td><td>get minino session dict.</td></tr>
+<tr><td valign="top"><a href="#path-1">path/1</a></td><td>get the request path.</td></tr>
+<tr><td valign="top"><a href="#read_settings_file-0">read_settings_file/0</a></td><td>read minino settings file.</td></tr>
+<tr><td valign="top"><a href="#render_template-2">render_template/2</a></td><td>render a template.</td></tr>
+<tr><td valign="top"><a href="#response-2">response/2</a></td><td>Create a valid minino response.</td></tr>
+<tr><td valign="top"><a href="#set_cookie-3">set_cookie/3</a></td><td>set cookie.</td></tr>
+<tr><td valign="top"><a href="#update_session_dict-2">update_session_dict/2</a></td><td>update minino session dict.</td></tr>
+<tr><td valign="top"><a href="#url_params-1">url_params/1</a></td><td>get request args.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="build_url-3">build_url/3</a></h3>
+<div class="spec">
+<p><tt>build_url(Id::atom(), Args::[{Key::atom(), Value::string()}], MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; {ok, string()} | {error, term()}</tt><br></p>
+</div><p>build url.
+  <p>This function creates an url from a view id.</p></p>
+
+<h3 class="function"><a name="get_conf-0">get_conf/0</a></h3>
+<div class="spec">
+<p><tt>get_conf() -&gt; [tuple()]</tt><br></p>
+</div><p>get conf
+ </p>
+
+<h3 class="function"><a name="get_cookie-2">get_cookie/2</a></h3>
+<div class="spec">
+<p><tt>get_cookie(MReq::<a href="#type-minino_req">minino_req()</a>, CookieName::string()) -&gt; string() | undefined</tt><br></p>
+</div><p>get cookie.
+ </p>
+
+<h3 class="function"><a name="get_cookies-1">get_cookies/1</a></h3>
+<div class="spec">
+<p><tt>get_cookies(MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; [{string(), string()}] | undefined</tt><br></p>
+</div><p>get cookies.
+ </p>
+
+<h3 class="function"><a name="get_file-2">get_file/2</a></h3>
+<div class="spec">
+<p><tt>get_file(MReq::<a href="#type-minino_req">minino_req()</a>, Path::string()) -&gt; ok | {error, Error::term()}</tt><br></p>
+</div><p>get file
+ </p>
+
+<h3 class="function"><a name="get_method-1">get_method/1</a></h3>
+<div class="spec">
+<p><tt>get_method(MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; string()</tt><br></p>
+</div><p>get method
+ </p>
+
+<h3 class="function"><a name="get_session_cookie_domain-0">get_session_cookie_domain/0</a></h3>
+<div class="spec">
+<p><tt>get_session_cookie_domain() -&gt; string()</tt><br></p>
+</div><p>get session cookie domain
+ </p>
+
+<h3 class="function"><a name="get_session_cookie_httponly-0">get_session_cookie_httponly/0</a></h3>
+<div class="spec">
+<p><tt>get_session_cookie_httponly() -&gt; true | false</tt><br></p>
+</div><p>get session cookie httponly
+ </p>
+
+<h3 class="function"><a name="get_session_cookie_path-0">get_session_cookie_path/0</a></h3>
+<div class="spec">
+<p><tt>get_session_cookie_path() -&gt; string()</tt><br></p>
+</div><p>get session cookie path
+ </p>
+
+<h3 class="function"><a name="get_session_cookie_secure-0">get_session_cookie_secure/0</a></h3>
+<div class="spec">
+<p><tt>get_session_cookie_secure() -&gt; true | false</tt><br></p>
+</div><p>get session cookie secure
+ </p>
+
+<h3 class="function"><a name="get_session_dict-1">get_session_dict/1</a></h3>
+<div class="spec">
+<p><tt>get_session_dict(MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; dict()</tt><br></p>
+</div><p>get minino session dict.
+ </p>
+
+<h3 class="function"><a name="path-1">path/1</a></h3>
+<div class="spec">
+<p><tt>path(MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; string()</tt><br></p>
+</div><p>get the request path
+ </p>
+
+<h3 class="function"><a name="read_settings_file-0">read_settings_file/0</a></h3>
+<div class="spec">
+<p><tt>read_settings_file() -&gt; {ok, [term()]} | {error, Error::term()}</tt><br></p>
+</div><p>read minino settings file.
+ </p>
+
+<h3 class="function"><a name="render_template-2">render_template/2</a></h3>
+<div class="spec">
+<p><tt>render_template(Template::<a href="#type-template_path">template_path()</a>, Args::<a href="#type-template_args">template_args()</a>) -&gt; {ok, string()} | {error, term()}</tt><br></p>
+</div><p>render a template.
+ </p>
+
+<h3 class="function"><a name="response-2">response/2</a></h3>
+<div class="spec">
+<p><tt>response(Msg::{error, Code::integer()} | string(), MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; R::<a href="#type-hidden">hidden()</a></tt><br></p>
+</div><p>Create a valid minino response.
+ </p>
+
+<h3 class="function"><a name="set_cookie-3">set_cookie/3</a></h3>
+<div class="spec">
+<p><tt>set_cookie(MReq::<a href="#type-minino_req">minino_req()</a>, CookieName::string(), CookieVal::string()) -&gt; MReq1::<a href="#type-minino_req">minino_req()</a> | {error, term()}</tt><br></p>
+</div><p>set cookie.
+ </p>
+
+<h3 class="function"><a name="update_session_dict-2">update_session_dict/2</a></h3>
+<div class="spec">
+<p><tt>update_session_dict(MReq::<a href="#type-minino_req">minino_req()</a>, Dict::dict()) -&gt; {ok, MReq1::<a href="#type-minino_req">minino_req()</a>} | {error, Error::term()}</tt><br></p>
+</div><p>update minino session dict.
+ </p>
+
+<h3 class="function"><a name="url_params-1">url_params/1</a></h3>
+<div class="spec">
+<p><tt>url_params(MReq::<a href="#type-minino_req">minino_req()</a>) -&gt; [{Key::binary(), Value::binary()}]</tt><br></p>
+</div><p>get request args
+ </p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Jun 12 2013, 09:42:17.</i></p>
+</body>
+</html>

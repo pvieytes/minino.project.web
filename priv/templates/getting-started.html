@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div>
+  <h1>Getting started</h1>
+  
+  <h3>Screencast</h3>
+  
+  
+  <p> 
+    <iframe src="http://player.vimeo.com/video/68051154" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+    </iframe> 
+  </p>
+  <p><a href="http://vimeo.com/68051154">Minino - an Erlang web miniframework - Screencast</a>.</p>
+
+ 
+  <h3>Create the application dir</h3>
+  <pre>
+    $ mkdir kitty
+    $ cd kitty</pre>
+
+  <h3>Get Minino</h3>
+  
+  <h4>Download</h4>
+ 
+  <p>Get the binary.</p> 
+  <pre>
+    $ wget http://minino.openshine.com/m/bin/minino
+    $ chmod 744 minino </pre>
+  
+
+  <h4>Build</h4>
+ 
+  Get the source and build it.
+  
+  <pre>
+    $ git clone git@github.com:openshine/minino.git
+    $ cd minino
+    $ make</pre>
+
+  <h3>Create a Minino Application</h3>
+  <pre>
+    $ ./minino create-app id=kitty</pre>
+
+  <h3>Run Minino Server</h3>
+  
+  <pre>$ ./minino runserver [Port]</pre>
+  <p>Port is an optional argument, it is 8000 by default.</p>
+  
+  <p>Check minino running at http://localhost:8000</p>
+
+  <h3>Examples</h3>
+
+  <p>Check some code <a href="https://github.com/openshine/minino/tree/master/examples">examples</a>.</p>
+
+ 
+
+{% endblock %}

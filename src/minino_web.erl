@@ -9,7 +9,10 @@
 
 %% views
 -export([home_view/3,
-	 test_view/3]).
+	 download_view/3,
+	 start_view/3,
+	 code_view/3
+	]).
 
 %% minino funs
 
@@ -18,19 +21,39 @@ init(_MConf) ->
 
 dispatch_rules() ->
     [%% {Id::atom(), Path::[string()|atom()], view::atom()}
-     {root_page, [], home_view},
-     {home_page, ["home"], home_view},
-     {test_page, ["test", testvalue], test_view}
+     {home_page, [], home_view},  
+     {get_page, ["getting-started"], start_view},
+     {download_page, ["download"], download_view},
+     {code_page, ["code"], code_view}
     ].
 
 
 %% views
 
 home_view(MReq, _Args, _Term) ->
-    {ok, Html} = minino_api:render_template("home.html", [{text, "Meow!!"}]),
+    Params = [{active, "home"}] ++ get_common(MReq),
+    {ok, Html} = minino_api:render_template("home.html", Params),
     minino_api:response(Html, MReq).
 
-test_view(MReq, Args, _Term) ->
-    TestVal = proplists:get_value(testvalue, Args),
-    Html = lists:flatten(io_lib:format("<html><body>test: ~s</body></html>", [TestVal])),
+start_view(MReq, _Args, _Term) ->
+    Params = [{active, "start"}] ++ get_common(MReq),
+    {ok, Html} = minino_api:render_template("getting-started.html", Params),
     minino_api:response(Html, MReq).
+
+download_view(MReq, _Args, _Term) ->
+    Params = [{active, "download"}] ++ get_common(MReq),
+    {ok, Html} = minino_api:render_template("download.html", Params),
+    minino_api:response(Html, MReq).
+
+code_view(MReq, _Args, _Term) ->
+    Params = [{active, "code"}] ++ get_common(MReq),
+    {ok, Html} = minino_api:render_template("code.html", Params),
+    minino_api:response(Html, MReq).
+
+
+get_common(MReq)->
+    Pages = [home_page,
+	     get_page, 
+	     download_page, 
+	     code_page], 
+    [{Page, minino_api:build_url(Page, [], MReq)} || Page <- Pages].

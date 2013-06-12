@@ -1,1 +1,42 @@
-<html><body>{{ text }}</body></html>
+{% extends "base.html" %}
+
+{% block container %}
+
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h1>Minino</h1>
+  <p>An Erlang web miniframework.</p>
+  <p> <a href="{{get_page}}" class="btn btn-primary btn-large">Learn more »</a></p>
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+  <div class="span4">
+    <h2>As simple as possible</h2>
+    <p>Install erlang, download a binary (escript), type some commands and minino is running!!</p>
+    <pre>$ ./minino create-app id=kitty
+$ ./minino runserver</pre>
+    <p><a class="btn" href="{{get_page}}">View details »</a></p>
+  </div>
+  <div class="span4">
+    <h2>Web miniframework</h2>
+    <p>What is <b>included</b>?<p>
+      <ul>
+        <li>dispatch rules</li>
+        <li>templates system</li>
+        <li>sessions</li>
+      </ul>
+    <p>What is <b>not included</b>?<p>
+      <ul>
+        <li>data model</li>
+      </ul>
+
+  </div>
+  <div class="span4">
+    <h2>Wirtten in Erlang</h2>
+    <p>Erlang is a general-purpose concurrent, garbage-collected programming language and runtime system. The sequential subset of Erlang is a functional language, with strict evaluation, single assignment, and dynamic typing. </p>
+    <p><a href="http://www.erlang.org">www.erlang.org</a></p>
+  </div>
+</div>
+{% endblock %}

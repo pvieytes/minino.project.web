@@ -20,12 +20,14 @@ init(_MConf) ->
     {ok, []}.
 
 dispatch_rules() ->
-    [%% {Id::atom(), Path::[string()|atom()], view::atom()}
-     {home_page, [], home_view},  
-     {get_page, ["getting-started"], start_view},
-     {download_page, ["download"], download_view},
-     {code_page, ["code"], code_view}
-    ].
+
+    [%% {Id::atom(), RegexUrlPath::string(), view::atom()}
+     {home_page, "^/$", home_view},
+     {get_page, "^/getting-started", start_view},
+     {download_page, "^/download", download_view},
+     {code_page, "^/code", code_view}
+    ]. 
+
 
 
 %% views
@@ -56,4 +58,4 @@ get_common(MReq)->
 	     get_page, 
 	     download_page, 
 	     code_page], 
-    [{Page, minino_api:build_url(Page, [], MReq)} || Page <- Pages].
+    [{Page, minino_api:build_url(Page, [])} || Page <- Pages].
